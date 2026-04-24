@@ -13,6 +13,16 @@ const eslintConfig = defineConfig([
     rules: {
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
+      'prefer-arrow-callback': 'error',
+      'func-style': ['error', 'expression', { allowArrowFunctions: true }],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'ExportDefaultDeclaration > FunctionDeclaration',
+          message:
+            'Use arrow function for default export instead of function declaration',
+        },
+      ],
     },
   },
   // Override default ignores of eslint-config-next.
